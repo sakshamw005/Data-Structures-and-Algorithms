@@ -22,7 +22,7 @@ class Solution {
 
     class TrieNode {
         TrieNode[] child = new TrieNode[26];
-        int bestIndex = -1;
+        int idxx = -1;
     }
 
     class Trie {
@@ -42,22 +42,22 @@ class Solution {
 
         int search(String word) {
             TrieNode curr = root;
-            int ans = curr.bestIndex;
+            int ans = curr.idxx;
 
             for (char ch : word.toCharArray()) {
                 int c = ch - 'a';
                 if (curr.child[c] == null) break;
                 curr = curr.child[c];
-                ans = curr.bestIndex;
+                ans = curr.idxx;
             }
             return ans;
         }
 
         void update(TrieNode node, int index) {
-            if (node.bestIndex == -1 ||
-                lens[index] < lens[node.bestIndex] ||
-                (lens[index] == lens[node.bestIndex] && index < node.bestIndex)) {
-                node.bestIndex = index;
+            if (node.idxx == -1 ||
+                lens[index] < lens[node.idxx] ||
+                (lens[index] == lens[node.idxx] && index < node.idxx)) {
+                node.idxx = index;
             }
         }
     }
