@@ -12,8 +12,6 @@ public:
         return ans;
     }
     int earliestFinishTime(vector<int>& lst, vector<int>& ld, vector<int>& wst, vector<int>& wd) {
-        int land = solve(lst,ld,wst,wd) ;
-        int water = solve(wst,wd,lst,ld) ;
-        return min(land,water) ;
+        return min(solve(lst,ld,wst,wd),solve(wst,wd,lst,ld)) ;
     }
 };
