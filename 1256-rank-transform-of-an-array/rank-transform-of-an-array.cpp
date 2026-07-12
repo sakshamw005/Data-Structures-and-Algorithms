@@ -4,7 +4,7 @@ public:
         vector<int> a = arr ;
         if(arr.size()==0)return {} ;
         sort(a.begin(),a.end()) ;
-        map<int,int> um; 
+        unordered_map<int,int> um; 
         um[a[0]] = 1 ;
         for(int i = 1; i<a.size() ; i++){
             if(a[i] > a[i-1]){
