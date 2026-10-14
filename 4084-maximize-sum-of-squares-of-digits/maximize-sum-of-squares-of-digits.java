@@ -4,7 +4,6 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         while(num-->0){
             while(n > 0 && sum - n < 0)n-- ;
-            //if(n==0)return "" ;
             sb.append(n) ;
             sum -= n ;
         }
@@ -13,6 +12,7 @@ class Solution {
     public String maxSumOfSquares(int num, int sum) {
         //if(sum >= num*10)return "" ;
         String s = solve(num,sum) ;
+        if (s.isEmpty()) return "";
         int x = 0 ;
         for(char i : s.toCharArray()){
             x += (i - '0') ;
