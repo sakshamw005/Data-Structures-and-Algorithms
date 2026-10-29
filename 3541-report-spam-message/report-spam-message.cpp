@@ -7,7 +7,7 @@ public:
         }
         int c = 0 ;
         for(string i : message){
-            if(us.find(i) != us.end()){
+            if(us.contains(i)){
                 c++ ;
             }
             if(c>=2)return true ;
