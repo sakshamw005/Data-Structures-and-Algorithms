@@ -1,0 +1,15 @@
+class Solution {
+    public int minimumSumSubarray(List<Integer> nums, int l, int r) {
+        int n = nums.size(), ans = Integer.MAX_VALUE;
+        for (int i = 0; i < n; i++) {
+            int s = 0;
+            for (int j = i; j < Math.min(i + r, n); j++) {
+                s += nums.get(j);
+                if (j - i + 1 >= l && 0 < s && s < ans){
+                    ans = s;
+                }
+            }
+        }
+        return ans == Integer.MAX_VALUE ? -1 : ans;
+    }
+}
